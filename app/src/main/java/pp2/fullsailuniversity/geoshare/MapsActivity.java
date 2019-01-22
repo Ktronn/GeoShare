@@ -62,8 +62,8 @@ public class MapsActivity extends FragmentActivity
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(28.5943978, -81.3039675);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Your location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 

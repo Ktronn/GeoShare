@@ -8,18 +8,25 @@ import android.content.Intent;
 import android.net.Uri;
 import android.widget.RemoteViews;
 
+
+
 public class GeoFindW extends AppWidgetProvider {
+
+
+
+
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         for (int appWidgetID : appWidgetIds) {
 
 
-            // Create a Uri from an intent string. Use the result to create an Intent.
-            Uri gmmIntentUri = Uri.parse("google.streetview:cbll=28.5943978,-81.3039675");
 
-           // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
+            // Create a Uri from an intent string. Use the result to create an Intent.
+            Uri gmmIntentUri = Uri.parse("google.streetview:cbll=longitude,latitude");
+
+            // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-          // Make the Intent explicit by setting the Google Maps package
+            // Make the Intent explicit by setting the Google Maps package
             mapIntent.setPackage("com.google.android.apps.maps");
 
             //Intent intent = new Intent(context, MapsActivity.class);
@@ -30,4 +37,9 @@ public class GeoFindW extends AppWidgetProvider {
             appWidgetManager.updateAppWidget(appWidgetID, views);
         }
     }
+
+
+
+
+
 }

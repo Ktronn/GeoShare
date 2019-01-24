@@ -19,14 +19,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import static android.support.v4.content.ContextCompat.getSystemService;
 
 public class GFLobby extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,
-        LocationListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
 
-    private LocationManager locationManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,9 @@ public class GFLobby extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -43,20 +46,6 @@ public class GFLobby extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-
-
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
 
 
@@ -127,23 +116,7 @@ public class GFLobby extends AppCompatActivity
         return true;
     }
 
-           @Override
-           public void onLocationChanged(Location location) {
 
-           }
 
-           @Override
-           public void onStatusChanged(String provider, int status, Bundle extras) {
 
-           }
-
-           @Override
-           public void onProviderEnabled(String provider) {
-
-           }
-
-           @Override
-           public void onProviderDisabled(String provider) {
-
-           }
        }

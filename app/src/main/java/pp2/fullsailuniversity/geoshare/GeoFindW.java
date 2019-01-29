@@ -14,7 +14,7 @@ import android.widget.RemoteViews;
 
 public class GeoFindW extends AppWidgetProvider {
 
-    private LocationManager locationManager;
+
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         for (int appWidgetID : appWidgetIds) {
